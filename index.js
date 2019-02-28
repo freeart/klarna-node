@@ -3,7 +3,7 @@ const klarnaCheckout = require('./src/klarna-checkout');
 const klarnaOrderManagement = require('./src/klarna-orderManagement');
 
 module.exports = {
-  klarnaCheckout,
-  klarnaOrderManagement,
+	klarnaCheckout,
+	klarnaOrderManagement
 };
 module.exports.default = klarna;

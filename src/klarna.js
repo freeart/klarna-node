@@ -7,30 +7,30 @@
  */
 
 const flags = {
-  live: false,
+	live: false
 };
 
 const credentials = {
-  uid: null,
-  password: null,
+	uid: null,
+	password: null
 };
 
 /* eslint camelcase: 0 */
 const init = (input) => {
-  if (!input) {
-    const error = { message: 'Missing init values' };
-    throw error;
-  }
-  if (input.uid != null) {
-    credentials.uid = input.uid;
-  }
-  if (input.password != null) {
-    credentials.password = input.password;
-  }
-  if ((input.live != null) && typeof input.live === 'boolean') {
-    flags.live = input.live;
-  }
-  return null;
+	if (!input) {
+		const error = { message: 'Missing init values' };
+		throw error;
+	}
+	if (input.uid != null) {
+		credentials.uid = input.uid;
+	}
+	if (input.password != null) {
+		credentials.password = input.password;
+	}
+	if ((input.live != null) && typeof input.live === 'boolean') {
+		flags.live = input.live;
+	}
+	return null;
 };
 
 /**
@@ -38,16 +38,15 @@ const init = (input) => {
  * @returns headers object, which contain Content-Type and Authorization headers
  */
 const headers = () => {
-  const token = `Basic  ${Buffer.from(`${credentials.uid}:${credentials.password}`).toString('base64')}`;
-  return {
-    'Content-Type': 'application/json',
-    Authorization: token,
-  };
+	const token = `Basic  ${Buffer.from(`${credentials.uid}:${credentials.password}`).toString('base64')}`;
+	return {
+		'Content-Type': 'application/json',
+		Authorization: token
+	};
 };
 
 module.exports = {
-  init,
-  headers,
-  flags,
+	init,
+	headers,
+	flags
 };
-

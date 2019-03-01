@@ -24,6 +24,9 @@ const urlBuilder = (action, orderId) => {
 		case 'capture':
 			url = `${base}/${orderId}/captures`;
 			break;
+		case 'cancel':
+			url = `${base}/${orderId}/cancel`;
+			break;
 		default:
 			url = '';
 	}

@@ -88,7 +88,11 @@ const updateOrder = async (id, order) => {
 };
 
 const cancelOrder = async (id) => {
-	const res = await requestPromise(options({}, `${id}/cancel`));
+	const res = await requestPromise({
+		url: `${id}/cancel`,
+		method: 'POST',
+		headers: headers()
+	});
 	return res;
 };
 

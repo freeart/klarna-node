@@ -59,7 +59,13 @@ const captureOrder = async (data, id) => {
 	return res;
 };
 
+const cancelOrder = async (id) => {
+	const res = await requestPromise(options('cancel', {}, id));
+	return res;
+};
+
 module.exports = {
 	acknowledgeOrder,
-	captureOrder
+	captureOrder,
+	cancelOrder
 };

@@ -87,19 +87,9 @@ const updateOrder = async (id, order) => {
 	return res;
 };
 
-const cancelOrder = async (id) => {
-	const res = await requestPromise({
-		url: `${id}/cancel`,
-		method: 'POST',
-		headers: headers()
-	});
-	return res;
-};
-
 module.exports = {
 	config,
 	createOrder,
 	getOrder,
-	updateOrder,
-	cancelOrder
+	updateOrder
 };
